@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Custom Directive</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+
+</head>
+
+<body ng-app="myApp">
+<h3>You can make custom directives in AngularJS too with app.directive.</h3>
+<h4>New directives are created by using the .directive function.
+
+To invoke the new directive, make an HTML element with the same tag name as the new directive.
+
+When naming a directive, you must use a camel case name, w3TestDirective, but when invoking it, you must use - separated name, w3-test-directive:</h4>
+<h5>You can invoke a directive by using:</h5>
+
+<p>Element name (i.e. &ltdirective-name&gt&lt/directive-name&gt)</p>
+<p>Attribute (i.e. &ltp directive-name&gt&lt/p&gt)
+<p>Class (i.e. &ltp class='directive-name'&gt&lt/p&gt)</p>
+<p>Comment: you can add the directive name in a comment line in your html file, but you have to add the replace property in this example, otherwise the comment will be invisible.
+
+Note: You must add the value "M" to the restrict property to be able to invoke the directive from a comment.</p>
+
+<w3-test-directive></w3-test-directive>
+
+<script>
+var app = angular.module("myApp", []);
+app.directive("w3TestDirective", function() {
+    return {
+        template : "<h1>This is my custom module template!</h1>"
+    };
+});
+</script>
+
+</body>
+
+</html>

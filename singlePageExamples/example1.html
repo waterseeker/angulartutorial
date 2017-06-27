@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+</head>
+
+<body>
+    <div ng-app="">
+        <p>Name : <input type="text" ng-model="name"></p> <!-- ng-model sets the value to a var that you can call in the 
+        double moustaches -->
+        <h1>Hello {{name}}</h1> <!-- so this will print out Hello and whatever the user input into the input box 
+        the space after Hello is kept in the string that is displayed on the page-->
+    </div>
+</body>
+
+</html>

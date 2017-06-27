@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS Expressions</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="scripts.js"></script>
+</head>
+<body  ng-app="">
+    <!-- AngularJS expressions can be written inside double braces: {{ expression }}.
+
+AngularJS expressions can also be written inside a directive: ng-bind="expression".
+
+AngularJS will resolve the expression, and return the result exactly where the expression is written.
+
+AngularJS expressions are much like JavaScript expressions: They can contain literals, operators, and variables.
+
+Example {{ 5 + 5 }} or {{ firstName + " " + lastName }}
+-->
+
+<div ng-init="myCol='lightblue'">
+<h3>You can change the background color by typing in a different color name. THis is using ng-model to 
+    put the value of the input box into the background-color css property of the input box. 
+</h3>
+<input style="background-color:{{myCol}}" ng-model="myCol" value="{{myCol}}">
+<!-- this uses ng-model to set a css property of an element on the page 
+inputting a different color in the input box will dynamically change the
+background color-->
+</div>
+
+<div ng-init="quantity=1;cost=5">
+<!-- angular will operate with numbers just like JS does, completeing any operations and outputting the answer -->
+<h3>Using ng-init to set values of vars and then use them in double moustache {{ }} notation. This is the output 
+    of {{ quantity * cost }} where quantity has been set to 1 and cost to 5.
+</h3>
+<p>Total in dollar: {{ quantity * cost }}</p>
+
+</div>
+
+<!-- the same as the exmaple above but using ng-bind insteand of the double moustache notation -->
+<div ng-init="quantity=1;cost=5">
+<h3>Same as above, but using ng-bing instead of double moustache {{ }} notation.</h3>
+<p>Total in dollar: <span ng-bind="quantity * cost"></span></p>
+
+</div>
+
+</body>
+</html>

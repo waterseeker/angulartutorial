@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
     <script src="scripts.js"></script>
 </head>
-<body  ng-app="">
+
+<body ng-app="">
     <!-- AngularJS expressions can be written inside double braces: {{ expression }}.
 
 AngularJS expressions can also be written inside a directive: ng-bind="expression".
@@ -20,31 +22,70 @@ AngularJS expressions are much like JavaScript expressions: They can contain lit
 Example {{ 5 + 5 }} or {{ firstName + " " + lastName }}
 -->
 
-<div ng-init="myCol='lightblue'">
-<h3>You can change the background color by typing in a different color name. THis is using ng-model to 
-    put the value of the input box into the background-color css property of the input box. 
-</h3>
-<input style="background-color:{{myCol}}" ng-model="myCol" value="{{myCol}}">
-<!-- this uses ng-model to set a css property of an element on the page 
+    <div ng-init="myCol='lightblue'">
+        <h3>You can change the background color by typing in a different color name. This is using ng-model to put the value
+            of the input box into the background-color css property of the input box.
+        </h3>
+        <input style="background-color:{{myCol}}" ng-model="myCol" value="{{myCol}}">
+        <!-- this uses ng-model to set a css property of an element on the page 
 inputting a different color in the input box will dynamically change the
 background color-->
-</div>
+    </div>
 
-<div ng-init="quantity=1;cost=5">
-<!-- angular will operate with numbers just like JS does, completeing any operations and outputting the answer -->
-<h3>Using ng-init to set values of vars and then use them in double moustache {{ }} notation. This is the output 
-    of {{ quantity * cost }} where quantity has been set to 1 and cost to 5.
-</h3>
-<p>Total in dollar: {{ quantity * cost }}</p>
+    <div ng-init="quantity=1;cost=5">
+        <!-- angular will operate with numbers just like JS does, completeing any operations and outputting the answer -->
+        <h3>Using ng-init to set values of vars and then use them in double moustache {{ }} notation. This is the output of {{
+            quantity * cost }} where quantity has been set to 1 and cost to 5.
+        </h3>
+        <p>Total in dollar: {{ quantity * cost }}</p>
 
-</div>
+    </div>
 
-<!-- the same as the exmaple above but using ng-bind insteand of the double moustache notation -->
-<div ng-init="quantity=1;cost=5">
-<h3>Same as above, but using ng-bing instead of double moustache {{ }} notation.</h3>
-<p>Total in dollar: <span ng-bind="quantity * cost"></span></p>
+    <!-- the same as the exmaple above but using ng-bind insteand of the double moustache notation -->
+    <div ng-init="quantity=1;cost=5">
+        <h3>Same as above, but using ng-bind instead of double moustache {{ }} notation.</h3>
+        <p>Total in dollar: <span ng-bind="quantity * cost"></span></p>
 
-</div>
+    </div>
 
+    <!-- AngularJS handles strings in the same way as JS does -->
+    <div ng-init="firstName='Mr.';lastName='Echo'">
+        <h3>You can use strings in AngularJS expressions just like you would in JS. This is the output of The name is {{ firstName
+            + " " + lastName }}</h3>
+        <p>The name is {{ firstName + " " + lastName }}</p>
+    </div>
+
+    <!-- same thing using ng-bind instead of the double moustaches -->
+    <div ng-app="" ng-init="firstName='Mr.';lastName='Echo'">
+        <h3>Same thing using ng-bind instead of the double moustaches. This is the output of "ng-bind=firstName + ' ' + lastName"</h3>
+        <p>The name is <span ng-bind="firstName + ' ' + lastName"></span></p>
+
+    </div>
+    <!-- you can access properties of objects using .notation just like you would in JS -->
+    <div ng-init="person={firstName:'Mr.',lastName:'Echo'}">
+        <h3>You can access properties of objects in AngularJS using .notation like you do in JS this is using person.lastName
+            in double moustaches.</h3>
+        <p>The name is {{ person.lastName }}</p>
+
+    </div>
+    <!-- again, you can use ng-bind instead of the {{ }} and get the same result -->
+    <div>
+        <h3>you can use ng-bind instead of the double moustaches and get the same result</h3>
+        <p>The name is <span ng-bind="person.lastName"></span></p>
+
+    </div>
 </body>
+<!-- you can access data in arrays in the same way you would in JS -->
+<div ng-init="points=['Chuck Roast','Tomatos','Rosemary','Onions','Carrots']">
+<h3>Accessing data in arrays works the same as it does in JS</h3>
+<p>The third entry in the array is {{ points[2] }}</p>
+
+</div>
+<!-- and you can use ng-bind insteac of {{ }} and get the same result -->
+<div>
+<h3>And you can use ng-bind instead of the double moustaches and get the same result</h3>
+<p>The third entry in the array is <span ng-bind="points[2]"></span></p>
+
+</div>
+
 </html>

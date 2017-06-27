@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS Module Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers.js"></script>
+<!-- While it is common in HTML applications to place scripts at the end of the <body> element, it is recommended that you load the AngularJS library either in the <head> or at the start of the <body>.
+
+This is because calls to angular.module can only be compiled after the library has been loaded. -->
+</head>
+
+<body ng-app="myApp">
+    <h3>The div below is using double moustaches to grab values that have been set in the controller</h3>
+    <div ng-controller="myCtrl">
+        {{ firstName + " " + lastName }}</div>
+    <h3>You can use directives as functions in the scope of the app. The one in the div below sets a template with a value of
+        the string "I was made in a directive constructor!"
+    </h3>
+    <div w3-test-directive></div>
+
+</body>
+
+</html>

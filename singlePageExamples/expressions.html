@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AngularJS Expressions</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
-    <script src="scripts.js"></script>
 </head>
 
 <body ng-app="">
@@ -23,7 +22,7 @@ Example {{ 5 + 5 }} or {{ firstName + " " + lastName }}
 -->
 
     <div ng-init="myCol='lightblue'">
-        <h3>You can change the background color by typing in a different color name. This is using ng-model to put the value
+        <h3>You can change the background color of the text box below by typing in a different color name. This is using ng-model to put the value
             of the input box into the background-color css property of the input box.
         </h3>
         <input style="background-color:{{myCol}}" ng-model="myCol" value="{{myCol}}">
@@ -87,5 +86,13 @@ background color-->
 <p>The third entry in the array is <span ng-bind="points[2]"></span></p>
 
 </div>
+
+<!-- Like JavaScript expressions, AngularJS expressions can contain literals, operators, and variables.
+
+Unlike JavaScript expressions, AngularJS expressions can be written inside HTML.
+
+AngularJS expressions do not support conditionals, loops, and exceptions, while JavaScript expressions do.
+
+AngularJS expressions support filters, while JavaScript expressions do not. -->
 
 </html>

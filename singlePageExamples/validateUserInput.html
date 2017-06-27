@@ -7,19 +7,82 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Using ng-model to Validate User Input</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
-
 </head>
 
-<body>
-    <h3>The input field below uses ng-model and an expression in ng-show to evaluate whether or
-        not to show a span. If the input doesn't match an e-mail address configuration, the span will
-        show. Otherwise the span will remain hidden. 
+<body ng-app="">
+    <h3>The input field below uses ng-model and an expression in ng-show to evaluate whether or not to show a span. If the input
+        doesn't match an e-mail address configuration, the span will show. Otherwise the span will remain hidden.
     </h3>
-    <form ng-app="" name="myForm">
+    <form name="myForm">
         Email:
         <input type="email" name="myAddress" ng-model="text">
         <span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
     </form>
+    <h3>You can also use ng-model to show the status for application data. Below, there are 3 condition checks. If the data is
+        $valid, $dirty, or $touched. </h3>
+    <ul>
+        <li>$pristine: It will be TRUE, if the user has not interacted with the form yet </li>
+        <li>$dirty: It will be TRUE, if the user has already interacted with the form. </li>
+        <li>$valid: It will be TRUE, if all containing form and controls are valid</li>
+        <li>$invalid: It will be TRUE, if at least one containing form and control is invalid.</li>
+        <li>$error: Is an object hash, containing references to all invalid controls or forms, where: keys are validation tokens
+            (error names) values are arrays of controls or forms that are invalid with given error.</li>
+    </ul>
+
+    <h3>There are some built in validation tokens, that can help in validating form:</h3>
+    <ul>
+        <li>email</li>
+        <li>max</li>
+        <li>maxlength</li>
+        <li>min</li>
+        <li>minlength</li>
+        <li>number</li>
+        <li>pattern</li>
+        <li>required</li>
+        <li>url</li>
+    </ul>
+
+
+    <h3>In conjunction with these AngularJS also provides corresponding CSS classes for them. We can use them for validation
+        purpose.
+    </h3>
+    <ul>
+        <li>ng-pristine</li>
+        <li>ng-dirty</li>
+        <li>ng-valid</li>
+        <li>ng-invalid</li>
+    </ul>
+
+    <h3>Lets see how we can use them. Usage:</h3>
+    <ul>
+        <li>In Form: myForm.$dirty</li>
+        <li>For Field: myForm.firldName.$dirty</li>
+        <li>In CSS: .ng-dirty{ background-color: yellow; }
+        </li>
+
+    </ul>
+
+    <form name="myEmailForm" ng-init="myText = 'post@myweb.com'">
+        Email:
+        <input type="email" name="myAddress" ng-model="myText" required>
+        <h1>Status</h1>
+        {{myEmailForm.myAddress.$valid}} {{myEmailForm.myAddress.$dirty}} {{myEmailForm.myAddress.$touched}}
+    </form>
+
+
+    <h3>The ng-model directive adds/removes the following classes, according to the status of the form field:</h3>
+    <ul>
+        <li>ng-empty</li>
+        <li>ng-not-empty</li>
+        <li>ng-touched</li>
+        <li>ng-untouched</li>
+        <li>ng-valid</li>
+        <li>ng-invalid</li>
+        <li>ng-dirty</li>
+        <li>ng-pending</li>
+        <li>ng-pristine</li>
+    </ul>
 </body>
+
 
 </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Angular Expressions</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+</head>
+
+<body>
+    <div data-ng-app="">
+        <p>My first expression: {{ 900 + 4 }}</p>
+        <!-- Angular JS expressions are written inside double moustaches {{ expression }}
+        Angular will output data exactly where the expression is written -->
+
+        <p>Name: <input type="text" data-ng-model="name"></p>
+        <p>{{name}}</p>
+        <!-- the double moustaches bind data in the same way that ng-bind does. -->
+    </div>
+</body>
+
+</html>

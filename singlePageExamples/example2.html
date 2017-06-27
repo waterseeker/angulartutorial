@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,24 @@
     <title>AngularJS Extends HTML</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
 </head>
-<body>
-    <div ng-app=""> <!-- the ng-app directive says the element that it's on is the "owner" of an AngularJS app
+
+<body ng-app="">
+    <div>
+        <!-- the ng-app directive says the element that it's on is the "owner" of an AngularJS app
     in this case we left the name of the app as an empty string -->
-        <p>Name: <input type="text" ng-model="name"></p> <!-- ng-model binds the info in the input box to the 
+        <p>Name: <input type="text" ng-model="name"></p>
+        <!-- ng-model binds the info in the input box to the 
         variable "name" -->
-        <p ng-bind="name"></p> <!--ng-bind sets the inner HTML of the element it's on to the var
+        <p ng-bind="name"></p>
+        <!--ng-bind sets the inner HTML of the element it's on to the var
         that it's = to. In this case it sets the innerHTML of the p tag to the value of the "name" var -->
     </div>
+
+    <div ng-init="firstName='Jon'">
+
+        <p>The ng-init bound value of firstName is <span ng-bind="firstName"></span></p>
+
+    </div>
 </body>
+
 </html>

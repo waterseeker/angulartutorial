@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS Gloabal API Examples</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="controllers.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <!-- putting the ng-app on the body give app access to the whole document you can also just put this on the html tag-->
+    <div ng-controller="myCtrl">
+        <p>{{ x1 }}</p>
+        <p>{{ x2 }}</p>
+        <p>{{ x3 }}</p>
+    </div>
+
+
+</body>
+
+</html>

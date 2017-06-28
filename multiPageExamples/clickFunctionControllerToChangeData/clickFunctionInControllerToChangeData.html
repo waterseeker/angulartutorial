@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Changing $scope data with a click funciton in the controller</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="controllers.js"></script>
+</head>
+
+<body>
+    <h3>clicking in the h1 below will cause a click function in the controller to fire that changes the value of
+        firstname, which is displayed in the h1.
+    </h3>
+<div ng-app="myApp" ng-controller="myCtrl">
+    <h1 ng-click="changeName()">{{firstname}}</h1>
+</div>
+
+</body>
+
+</html>
